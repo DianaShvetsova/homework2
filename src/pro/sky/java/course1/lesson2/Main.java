@@ -2,22 +2,24 @@ package pro.sky.java.course1.lesson2;
 
 public class Main {
     public static void main(String[] args) {
+        Task1();
+        Task2();
+        Task3();
+        Task4();
+        Task5();
+        Task6();
+    }
+
+    private static void Task1() {
         int clientOS = 0;
         if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        if (clientOS == 0) {
+        } else {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
-
-        Задание2();
-        Задание3();
-        Задание4();
-        Задание5();
-        Задание6();
     }
 
-    private static void Задание2() {
+    private static void Task2() {
         int clientOS = 0;
         int clientDeviceYear = 2015;
         if (clientOS == 0) {
@@ -27,34 +29,34 @@ public class Main {
         } else {
             if (clientDeviceYear <= 2019) {
                 System.out.println("Установите lite-версию приложения для Android по ссылке");
-            } else System.out.println("Установите обычную приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите обычную приложения для Android по ссылке");
+            }
         }
     }
 
-    private static void Задание3() {
+    private static void Task3() {
         int year = 2020;
-        if (year % 4 != 0) {
-            System.out.println("Год не является високосным");
-        } else if (year % 100 == 0 && year % 400 != 0) {
+        if (year % 4 != 0 && year % 100 == 0 && year % 400 != 0) {
             System.out.println("Год не является високосным");
         } else {
             System.out.println("Год является високосным");
         }
     }
 
-    private static void Задание4() {
+    private static void Task4() {
         int deliveryDistance = 95;
         int deliveryDay = 1;
         if (deliveryDistance <= 20) {
-            System.out.println("Доставка занимает " + deliveryDay + " дней");
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Доставка занимает " + deliveryDay * 2 + " дня");
+            deliveryDay += 1;
         } else if (deliveryDistance > 60) {
-            System.out.println("Доставка занимает " + deliveryDay * 3 + " дня");
+            deliveryDay += 2;
         }
+        System.out.println("Доставка занимает " + deliveryDay + " дня");
     }
 
-    private static void Задание5() {
+    private static void Task5() {
         int monthNumber = 12;
         switch (monthNumber) {
             case 12:
@@ -82,26 +84,24 @@ public class Main {
         }
     }
 
-    private static void Задание6() {
+    private static void Task6() {
         int age = 19;
         int salary = 58000;
-        if (age >= 23 && salary >= 50000 && salary <= 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * 1.2 + " рублей");
+        double limit = salary;
+        if (age < 23) {
+            limit *= 2;
         }
-        if (age >= 23 && salary >= 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * 1.5 + " рублей");
+        if (age >= 23) {
+            limit *= 3;
         }
-        if (age >= 23 && salary <= 50000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 + " рублей");
+        if (salary > 50000 && salary < 80000) {
+            limit *= 1.2;
         }
-        if (age < 23 && salary <= 50000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 + " рублей");
+        if (salary >= 80000) {
+            limit *= 1.5;
         }
-        if (age < 23 && salary > 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * 1.5 + " рублей");
-        }
-        if (age < 23 && salary >= 50000 && salary < 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * 1.2 + " рублей");
-        }
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + limit + " рублей");
     }
+
+
 }
