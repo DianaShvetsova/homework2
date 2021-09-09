@@ -13,7 +13,7 @@ public class Main {
         task2();
         task3();
         task4();
-
+        task7();
     }
 
     private static void task2() {
@@ -33,5 +33,14 @@ public class Main {
         String rightName = fullName.replace("ё", "е");
         System.out.println("Данные ФИО сотрудника – " + rightName);
     }
-
+    private static void task7() {
+    StringBuilder first = new StringBuilder("135");
+    StringBuilder second = new StringBuilder("246");
+            first.setCharAt(1, '2');
+            first.setCharAt(2, '3');
+        second.setCharAt(0, '4');
+        second.setCharAt(1, '5');
+            System.out.print(first);
+        System.out.print(second);
+    }
 }
