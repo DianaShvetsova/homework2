@@ -1,19 +1,22 @@
 package pro.sky.java.course1.homework6;
 
 public class Main {
-    private static Object Array;
 
     public static void main(String[] args) {
+        task1();
+        task2();
+        task3();
+        task4();
+        task7();
+    }
+
+    private static void task1() {
         String firstName = "Ivan";
         String middleName = "Ivanovich";
         String lastName = "Ivanov";
         String fullName = lastName + " " + firstName + " " + middleName;
         System.out.println("ФИО сотрудника – " + fullName);
 
-        task2();
-        task3();
-        task4();
-        task7();
     }
 
     private static void task2() {
@@ -34,13 +37,12 @@ public class Main {
         System.out.println("Данные ФИО сотрудника – " + rightName);
     }
     private static void task7() {
-    StringBuilder first = new StringBuilder("135");
-    StringBuilder second = new StringBuilder("246");
-            first.setCharAt(1, '2');
-            first.setCharAt(2, '3');
-        second.setCharAt(0, '4');
-        second.setCharAt(1, '5');
-            System.out.print(first);
-        System.out.print(second);
+        String first = "135";
+        String second = "246";
+        StringBuilder g = new StringBuilder();
+        for (int i = 0; i < first.length(); i++) {
+            g.append(first.charAt(i)).append(second.charAt(i));
+        }
+        System.out.println(g.toString());
     }
 }
