@@ -9,15 +9,13 @@ public class Main {
             sum += arr[i];
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
-        int maxCost = 0;
-        int minCost = 200000;
+        int maxCost = arr[0];
+        int minCost = arr[0];
         for (int r = 0; r < arr.length; r++) {
             if (arr[r] > maxCost) {
                 maxCost = arr[r];
             }
-        }
-        for (int r = 0; r < arr.length; r++) {
-            if (arr[r] < minCost) {
+               if (arr[r] < minCost) {
                 minCost = arr[r];
             }
         }
@@ -28,7 +26,7 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-        float averageSum = sum / 30f;
+        double averageSum = sum / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + averageSum + " рублей");
 
     }
